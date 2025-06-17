@@ -4,7 +4,13 @@ kubernetes-mongodb-statefulset
 
 - **`service.yml`**: Defines the Kubernetes Service for MongoDB. The service is of type `ClusterIP` set to `None`, enabling stable DNS records for each MongoDB pod.
 - **`statefulset.yml`**: Defines the StatefulSet for MongoDB with 2 replicas. Each pod is configured to mount a persistent volume at `/data/db`.
-- 
+-  In Kubernetes, to save data, we use:
+    **`PersistentVolume (PV)`**— defines where the data is stored.
+
+    **`PersistentVolumeClaim (PVC)`** — a request for some storage.
+     hostPath — tells Kubernetes: "save data on this path inside the physical machine."
+
+hostPath — tells Kubernetes: "save data on this path inside the physical machine
 ## Configuration Details
 
 ### Service (`service.yml`)
